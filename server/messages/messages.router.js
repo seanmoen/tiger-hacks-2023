@@ -26,5 +26,4 @@ messagesRouter.get("/admin", validateAccessToken, (req, res) => {
   res.status(200).json(message);
 });
 
-module.exports = { messagesRouter };
-
+module.exports = { messagesRouter} ;
