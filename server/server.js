@@ -13,14 +13,14 @@ app.use(cors());
 app.use(express.json());
 app.use(users);
 
-
+const PORT = process.env.PORT || 5173;
 app.listen(port, async () => {
     // perform a database connection when server starts
     await dbo.connectToServer((err) => {
       if (err) console.log(err);
-   
+
     });
-    console.log(`Server is running on port: ${port}`);
+    console.log(`Server is running on port: ${5173}`);
   });
 
 
