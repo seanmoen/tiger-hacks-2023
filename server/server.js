@@ -3,6 +3,7 @@ require("dotenv").config({path: "./config.env"})
 const connect = require("./connect");
 const express = require("express");
 const cors = require("cors");
+const users = require("./userRoutes")
 
 const port = process.env.PORT;
 const dbo = connect;
@@ -10,6 +11,7 @@ const dbo = connect;
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(users);
 
 
 app.listen(port, async () => {
