@@ -14,8 +14,9 @@ const client = new MongoClient(uri, {
 var database;
  
 module.exports = {
-  connectToServer: function (callback) {
-    client.connect(function (err, db) {
+  connectToServer: async function (callback) {
+    console.log("we are in connectToServer function")
+    await client.connect(function (err, db) {
       // Verify we got a good "db" object
       if (db)
       {
