@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { LoginButton } from "../components/buttons/login-button"
 
 export function Landing() {
 
@@ -17,6 +18,7 @@ export function Landing() {
             <button onClick={handleClick} className="p-4 m-4 border-2 border-white rounded-lg">
                 Play
             </button>
+	    <LoginButton/>
         </div>
     )
 }
