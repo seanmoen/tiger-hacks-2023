@@ -18,7 +18,7 @@ challengeRoutes.route("/challenges").get((request, response) => {
 });
    
 // Retrieve a challenge by its id
-userRoutes.route("/challenges/:id").get((request, response) => {
+challengeRoutes.route("/challenges/:id").get((request, response) => {
     let db_connect = dbo.getDb(); 
     let myquery = { _id: ObjectId(request.params.id) };
     db_connect.collection("Challenges")
@@ -29,7 +29,7 @@ userRoutes.route("/challenges/:id").get((request, response) => {
 });
 
 // Create Challenge
-userRoutes.route("/challenges").post((request, response) => {
+challengeRoutes.route("/challenges").post((request, response) => {
     let db_connect = dbo.getDb();
     let myobj = {
         title: request.body.title,

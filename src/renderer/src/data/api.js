@@ -115,6 +115,7 @@ export async function getAllChallenges() {
                 data: responseJson
             }
         }
+        console.log("Something went wrong")
 }
 
 export async function getChallengeById(id) {
