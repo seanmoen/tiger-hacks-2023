@@ -12,7 +12,7 @@ export const LoginButton = () => {
   };
 
   return (
-    <button className="text-3xl font-bold text-orange bg-white p-4 rounded-lg border-4 m-12 border-orange-500" onClick={handleLogin}>
+    <button className="text-3xl font-bold text-orange bg-white p-4 rounded-lg border-4 m-4 border-orange-500" onClick={handleLogin}>
       Log In
     </button>
   );

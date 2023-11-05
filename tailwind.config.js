@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     "./src/renderer/src/**/*.jsx"
   ],
@@ -10,7 +11,8 @@ module.exports = {
       },
       colors: {
         orange1: '#d14545',
-        orange2: '#ffd045'
+        orange2: '#ffd045',
+        white: "ffffff"
       }
     },
     textColor: {
