@@ -1,5 +1,8 @@
+export const BASE_URL = "http://34.133.126.202"
+export const PORT = 3000
+
 export async function createUser(object) {
-    const response = await fetch(`http://localhost:3000/users`, {
+    const response = await fetch(`${BASE_URL}:${PORT}/users`, {
         method:"post",
         headers: new Headers({
             'Content-Type':'application/json',
@@ -28,7 +31,7 @@ export async function createUser(object) {
 }
 
 export async function getAllUsers() {
-    const response = await fetch(`http://localhost:3000/users`, {
+    const response = await fetch(`${BASE_URL}:${PORT}/users`, {
             method:'get'
         });
 
@@ -49,7 +52,7 @@ export async function getAllUsers() {
 
 export async function getUserById(id) {
     console.log(id)
-    const response = await fetch(`http://localhost:3000/users/${id}`, {
+    const response = await fetch(`${BASE_URL}:${PORT}/users/${id}`, {
         method: "get"
     })
 
@@ -69,7 +72,7 @@ export async function getUserById(id) {
 }
 
 export async function createChallenge(object) {
-    const response = await fetch(`http://localhost:3000/challenges`, {
+    const response = await fetch(`${BASE_URL}:${PORT}/challenges`, {
         method:"post",
         headers: new Headers({
             'Content-Type':'application/json',
@@ -98,7 +101,7 @@ export async function createChallenge(object) {
 }
 
 export async function getAllChallenges() {
-    const response = await fetch(`http://localhost:3000/challenges`, {
+    const response = await fetch(`${BASE_URL}:${PORT}/challenges`, {
             method:'get'
         });
 
@@ -120,7 +123,7 @@ export async function getAllChallenges() {
 
 export async function getChallengeById(id) {
     console.log(id)
-    const response = await fetch(`http://localhost:3000/challenges/${id}`, {
+    const response = await fetch(`${BASE_URL}:${PORT}/challenges/${id}`, {
         method: "get"
     })
 

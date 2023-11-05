@@ -12,9 +12,8 @@ body {
       'Cantarell',
       'Open Sans',
       sans-serif;
-    color: #e85617;
-    background-color: white;
-    
+      background-color: white;
+      color: "#e85617";
   }
   
   * {
@@ -205,6 +204,25 @@ body {
     }
   }
   
+.titleSequence {
+  font-size: 125px;
+  padding: 2px;
+  font-weight: bold;
+  font-style: italic;
+  color: whitesmoke;
+}
+
+.slogan {
+  font-size: 30px;
+  font-style: italic;
+  margin: 2px;
+  color: white;
+}
+
+.navitem {
+  color: white;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

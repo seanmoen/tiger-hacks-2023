@@ -10,7 +10,7 @@ export const pages = [
         path: "/pastChallenges"
     },
     {
-        name: "Profile",
-        path: "/profile"
-    }
+        name: "Leaderboard",
+        path: "/leaderboard"
+    },
 ]

@@ -10,7 +10,7 @@ export function Navbar() {
             </div>
             {pages.map((page) => {
             return (
-                <button className="my-4 mx-8 p-2 border-4 border-white rounded-lg text-2xl">
+                <button className="my-4 mx-8 p-2 rounded-lg text-2xl navitem">
                     <Link to={page.path}>
                         {page.name}
                     </Link>
