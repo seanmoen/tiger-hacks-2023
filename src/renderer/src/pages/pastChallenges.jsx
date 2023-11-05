@@ -13,7 +13,7 @@ export function PastChallenges() {
         async function grabChallenges() {
             let fetchedChallenges = await getAllChallenges()
             console.log(fetchedChallenges)
-            setChallenge(fetchedChallenges.data)
+            setChallenges(fetchedChallenges.data)
             setIsLoaded(true)
         }
         grabChallenges()
@@ -30,8 +30,9 @@ export function PastChallenges() {
 
           <div className="flex flex-col items-center justify-center">
             {challenges.map((challenge) => {
-                return (
-                    <Challenge id={challenge._id}/>
+                if (new Date(challenge?.endDate) <= new Date())
+                return ( 
+                        <Challenge id={challenge._id}/>
                 )
             })}
 
