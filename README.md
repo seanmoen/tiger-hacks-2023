@@ -6,17 +6,14 @@ Here is our github for our project
 
 An Electron application with React
 
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
 ## Project Setup
+
+The folder setup consists 
 
 ### Install
 
-```bash
-$ npm install
-```
+You must have node.js installed and npm. Use the command `npm install` in the root directory of the project.
+This will install all packages needed to run the application.
 
 ### Development
 
