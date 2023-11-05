@@ -10,11 +10,9 @@ import { getAllUsers, createUser } from "./data/api"
 import { useEffect, useState } from "react"
 
 function App() {
-const { user } = useAuth0();
+const { user, isLoading } = useAuth0();
 const [usersLoaded, setUsersLoaded] = useState(false)
 const [users, setUsers] = useState([])
-
-console.log(user)
 
 useEffect(() => {
   async function grabAllUsers() {
@@ -25,7 +23,7 @@ useEffect(() => {
   grabAllUsers()
 }, [])
 
-if (user && usersLoaded) {
+if (user && usersLoaded && !isLoading) {
   if (!users.find((userObject) => userObject.email == user.email)) {
     console.log("We are adding a user")
     addUser()

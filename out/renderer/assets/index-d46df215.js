@@ -10348,7 +10348,7 @@ const LoginButton = () => {
   const handleLogin = async () => {
     await loginWithRedirect({
       appState: {
-        returnTo: "/profile"
+        returnTo: "/#/home"
       }
     });
   };
@@ -10363,7 +10363,7 @@ function Landing() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(LoginButton, {})
   ] });
 }
-const BASE_URL = "http://googlecloud.seannotseen.com";
+const BASE_URL = "https://googlecloud.seannotseen.com";
 const PORT = 3e3;
 async function createUser(object) {
   const response = await fetch(`${BASE_URL}:${PORT}/users`, {
@@ -10464,7 +10464,7 @@ function Challenge({ id: id2 }) {
       " - ",
       new Date(challenge?.endDate).toLocaleDateString()
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "flex justify-center items-center border-l-2 border-orange-500 p-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-row", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center items-center border-l-2 border-orange-500 p-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-row", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold", children: "Challenge:" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "italic", children: challenge.description })
     ] }) })
@@ -10472,9 +10472,22 @@ function Challenge({ id: id2 }) {
 }
 const TigerHacks = "" + new URL("TigerHacks-032a1e8a.png", import.meta.url).href;
 function Home() {
+  const { user, isLoading } = useAuth0();
+  const [loaded, setLoaded] = reactExports.useState(false);
+  const [username, setUsername] = reactExports.useState("");
+  reactExports.useEffect(() => {
+    if (!isLoading) {
+      setLoaded(true);
+      setUsername(user.nickname);
+    }
+  }, [isLoading]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col width-screen height-screen", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "flex items-center justify-center text-5xl font-bold m-5", children: "Welcome to Social Duel" }),
+    loaded && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "flex items-center justify-center text-5xl font-bold m-5", children: [
+        "Hello ",
+        username,
+        ", welcome to Social Duel"
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "flex items-center justify-center text-xl m-5 italic", children: "Complete this challenge for a chance to win a prize!" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Challenge, { id: "65466b9f02b1db375924b1b7" }) }),
@@ -10622,20 +10635,22 @@ function Navbar() {
   ] });
 }
 function Layout() {
-  const { isAuthenticated } = useAuth0();
-  if (!isAuthenticated) {
-    useNavigate();
-  }
+  const { isAuthenticated, isLoading } = useAuth0();
+  const navigate = useNavigate();
+  reactExports.useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      navigate("../");
+    }
+  }, [isAuthenticated, navigate]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Navbar, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {})
   ] });
 }
 function App() {
-  const { user } = useAuth0();
+  const { user, isLoading } = useAuth0();
   const [usersLoaded, setUsersLoaded] = reactExports.useState(false);
   const [users, setUsers] = reactExports.useState([]);
-  console.log(user);
   reactExports.useEffect(() => {
     async function grabAllUsers() {
       let allUsers = await getAllUsers();
@@ -10644,7 +10659,7 @@ function App() {
     }
     grabAllUsers();
   }, []);
-  if (user && usersLoaded) {
+  if (user && usersLoaded && !isLoading) {
     if (!users.find((userObject) => userObject.email == user.email)) {
       console.log("We are adding a user");
       addUser();
@@ -10674,7 +10689,7 @@ client.createRoot(document.getElementById("root")).render(
     {
       domain: "dev-m2hmp2fkbivz6uc5.us.auth0.com",
       clientId: "nwDxxJjoJ7kB8gyydqhxwk82co0OX0ih",
-      authorizationParams: { redirectUri: "http://seannotseen.com/#/home" },
+      authorizationParams: { redirectUri: "https://googlecloud.seannotseen.com/#/home" },
       children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {})
     }
   )
