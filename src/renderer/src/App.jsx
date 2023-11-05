@@ -21,25 +21,18 @@ const { isLoading, isAuthenticated, error, user, loginWithRedirect, logout } =
 	if (error) {console.log(error)}
 
   return (
-    <Router>
-      <Routes>
-	  {/*
-	        <Route path="/" element={<HomePage />} />
-      <Route path="/profile" element={<ProfilePage />} />
-      <Route path="/public" element={<PublicPage />} />
-      <Route path="/protected" element={<ProtectedPage />} />
-      <Route path="/callback" element={<CallbackPage />} />
-      <Route path="*" element={<NotFoundPage />} />
-      */}
-
-        <Route path={"/"} element={<Landing/>}/>
-        <Route element={<Layout/>}>
-          <Route path={"/home"} element={<Home/>}/>
-          <Route path={"/pastChallenges"} element={<PastChallenges/>}/>
-          <Route path={"/profile"} element={<Profile/>}/>
-        </Route>
-      </Routes>
-    </Router>
+    <div className="text-white">
+      <Router>
+        <Routes>
+          <Route path={"/"} element={<Landing/>}/>
+          <Route element={<Layout/>}>
+            <Route path={"/home"} element={<Home/>}/>
+            <Route path={"/pastChallenges"} element={<PastChallenges/>}/>
+            <Route path={"/profile"} element={<Profile/>}/>
+          </Route>
+        </Routes>
+      </Router>
+    </div>
   )
 }
 

@@ -4,7 +4,22 @@ module.exports = {
     "./src/renderer/src/**/*.jsx"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgrundImage: {
+        'orange-gradient': "url('./OrangeGradient2.svg')"
+      },
+      colors: {
+        orange1: '#d14545',
+        orange2: '#ffd045'
+      }
+    },
+    textColor: {
+      orange: "#e85617",
+    },
+    fontFamily: {
+      'sans': 'Roboto'
+    },
+
   },
   plugins: [],
 }

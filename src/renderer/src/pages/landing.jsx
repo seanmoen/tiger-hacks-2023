@@ -8,17 +8,10 @@ export function Landing() {
     }
 
     return (
-        <div className="flex flex-col w-screen h-screen justify-center items-center">
-            <h1 className="text-4xl text-white font-bold">Landing Page</h1>
-            <button className="p-4 m-4 border-2 border-white rounded-lg">
-                <Link to="/home">
-                    Go to Home page
-                </Link>
-            </button>
-            <button onClick={handleClick} className="p-4 m-4 border-2 border-white rounded-lg">
-                Play
-            </button>
-	    <LoginButton/>
+        <div className="flex flex-col w-screen h-screen justify-center items-center bg-gradient-to-br from-orange1 to-orange2">
+            <h1 className="text-8xl bg-orange text-white p-6 border-4 rounded-2xl font-bold italic">Social Duel</h1>
+            <h2 className="text-2xl italic m-8">The world's most competitive challenge platform</h2>
+	        <LoginButton/>
         </div>
     )
 }
