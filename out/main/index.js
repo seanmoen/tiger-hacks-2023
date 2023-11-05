@@ -4,8 +4,8 @@ const path = require("path");
 const utils = require("@electron-toolkit/utils");
 function createWindow() {
   const mainWindow = new electron.BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1920,
+    height: 1080,
     show: false,
     autoHideMenuBar: true,
     ...process.platform === "linux" ? {} : {},
