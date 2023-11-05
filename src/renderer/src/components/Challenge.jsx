@@ -32,7 +32,7 @@ export function Challenge({id}) {
                 <p className="flex justify-center items-center border-l-2 border-orange-500 p-2 italic">
                     {new Date(challenge?.startDate).toLocaleDateString()} - {new Date(challenge?.endDate).toLocaleDateString()}
                 </p>
-                <p className="flex justify-center items-center border-l-2 border-orange-500 p-2">
+                <div className="flex justify-center items-center border-l-2 border-orange-500 p-2">
                     <div className="flex flex-row">
                         <div className="font-bold">
                             Challenge: 
@@ -41,8 +41,7 @@ export function Challenge({id}) {
                             {challenge.description}
                         </div>
                     </div>
-                    
-                </p>
+                </div>
             </div>
             }
         </>
