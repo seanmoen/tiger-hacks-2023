@@ -1,4 +1,4 @@
-export const BASE_URL = "https://googlecloud.seannotseen.com"
+export const BASE_URL = "http://googlecloud.seannotseen.com"
 export const PORT = 3000
 
 export async function createUser(object) {
